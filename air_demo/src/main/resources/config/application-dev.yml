@@ -24,7 +24,7 @@ eureka:
         prefer-ip-address: true
     client:
         service-url:
-            defaultZone: http://admin:${jhipster.registry.password}@localhost:8761/eureka/
+            defaultZone: http://admin:${jhipster.registry.password}@39.104.83.25:8761/eureka/
 
 spring:
     profiles:
@@ -73,8 +73,8 @@ spring:
     thymeleaf:
         cache: false
     zipkin: # Use the "zipkin" Maven profile to have the Spring Cloud Zipkin dependencies
-        base-url: http://localhost:9411
-        enabled: false
+        base-url: http://39.104.83.25:9411
+        enabled: true
         locator:
             discovery:
                 enabled: true
@@ -145,12 +145,12 @@ jhipster:
             enabled: false
             endpoint: /prometheusMetrics
         logs: # Reports Dropwizard metrics in the logs
-            enabled: false
+            enabled: true
             report-frequency: 60 # in seconds
     logging:
         logstash: # Forward logs to logstash over a socket, used by LoggingConfiguration
-            enabled: false
-            host: localhost
+            enabled: true
+            host: 39.104.83.25
             port: 5000
             queue-size: 512
         spectator-metrics: # Reports Spectator Circuit Breaker metrics in the logs
